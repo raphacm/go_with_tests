@@ -1,7 +1,10 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/raphacm/go_with_tests/pkg/greeting"
+	"github.com/raphacm/go_with_tests/pkg/integers"
 )
 
 func main() {
@@ -10,4 +13,5 @@ func main() {
 	fmt.Println(greeting.Hello("Raphael", "Spanish"))
 	fmt.Println(greeting.Hello("Raphael", "French"))
 	fmt.Println(greeting.Hello("Raphael", "Italian"))
+	fmt.Println(integers.Add(1, 1))
 }
