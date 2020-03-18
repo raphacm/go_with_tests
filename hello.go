@@ -4,14 +4,23 @@ import (
 	"fmt"
 )
 
+const spanish = "Spanish"
+
 //Hello return 'Hello World' text
-func Hello(name string) string {
-	if name == "" {
-		return "Hello World"
+func Hello(name, language string) string {
+	var greetPrefix = "Hello "
+
+	if language == spanish {
+		greetPrefix = "Hola "
 	}
-	return "Hello " + name
+
+	if name == "" {
+		name = "World"
+	}
+
+	return greetPrefix + name
 }
 
 func main() {
-	fmt.Println(Hello("Raphael"))
+	fmt.Println(Hello("Raphael", "Spanish"))
 }
