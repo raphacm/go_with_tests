@@ -6,17 +6,19 @@ import (
 
 const spanish = "Spanish"
 const french = "French"
+const italian = "Italian"
 
-//Hello return 'Hello World' text
+//Hello returns greetings
 func Hello(name, language string) string {
 	var greetPrefix = "Hello "
 
-	if language == spanish {
+	switch language {
+	case spanish:
 		greetPrefix = "Hola "
-	}
-
-	if language == french {
+	case french:
 		greetPrefix = "Bonjour "
+	case italian:
+		greetPrefix = "Ciao "
 	}
 
 	if name == "" {
@@ -27,5 +29,9 @@ func Hello(name, language string) string {
 }
 
 func main() {
+	fmt.Println(Hello("", ""))
+	fmt.Println(Hello("Raphael", ""))
 	fmt.Println(Hello("Raphael", "Spanish"))
+	fmt.Println(Hello("Raphael", "French"))
+	fmt.Println(Hello("Raphael", "Italian"))
 }
