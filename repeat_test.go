@@ -25,4 +25,10 @@ func TestRepeat(t *testing.T) {
 		assertEquals(t, expected, got)
 	})
 
+	t.Run("should return empty string if times parameter is less than 0", func(t *testing.T) {
+		got := Repeat("z", -10)
+		expected := ""
+
+		assertEquals(t, expected, got)
+	})
 }
