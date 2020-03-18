@@ -38,4 +38,11 @@ func TestHello(t *testing.T) {
 
 		assertMessage(t, got, want)
 	})
+
+	t.Run(("should return greeting in Italian when a language parameter is passed as 'Italian'"), func(t *testing.T) {
+		got := Hello("Raphael", "Italian")
+		want := "Ciao Raphael"
+
+		assertMessage(t, got, want)
+	})
 }
