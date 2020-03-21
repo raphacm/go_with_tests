@@ -12,14 +12,9 @@ func Sum(numbers []int) int {
 }
 
 //SumAll sums all slice values and returns their sums inside a new slice
-func SumAll(slices ...[]int) []int {
-	lengthOfSlices := len(slices)
-	sums := make([]int, lengthOfSlices)
-
-	for i, slice := range slices {
-		for _, number := range slice {
-			sums[i] += number
-		}
+func SumAll(slices ...[]int) (sums []int) {
+	for _, slice := range slices {
+		sums = append(sums, Sum(slice))
 	}
 
 	return sums
